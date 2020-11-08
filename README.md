@@ -1,3 +1,3 @@
 # AddressBook-js
 
-### UC6_NoOfContacts
+### UC7_NoDuplicateContactAllowed

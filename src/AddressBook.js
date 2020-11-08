@@ -123,3 +123,31 @@ function counter(count) {
 }
 numbersOfContact = addressBook.reduce(counter, 0);
 console.log("Number of contacts: " + numbersOfContact);
+
+function addNewContact(addressBook, newContact) {
+  if (
+    addressBook.find(
+      (contact) =>
+        contact.firstName === newContact.firstName &&
+        contact.lastName === newContact.lastName
+    ) === undefined
+  )
+    addressBook.push(newContact);
+  else throw "Contact with same name already exists";
+}
+
+let newContact = new Contact(
+  "Aditi",
+  "Sharma",
+  "Kolapur",
+  "Mumbai",
+  "Maharashtra",
+  "401401",
+  "9595959595",
+  "adi@gmail.com"
+);
+try {
+  addNewContact(addressBook, newContact);
+} catch (e) {
+  console.error(e);
+}
