@@ -151,3 +151,14 @@ try {
 } catch (e) {
   console.error(e);
 }
+
+function searchByCity(addressBook, city) {
+  return addressBook.filter((contact) => contact.city === city);
+}
+
+function searchByState(addressBook, state) {
+  return addressBook.filter((contact) => contact.state === state);
+}
+
+console.log(searchByCity(addressBook, "Pune"));
+console.log(searchByState(addressBook, "West Bengal"));
