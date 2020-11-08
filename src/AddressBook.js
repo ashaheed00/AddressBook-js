@@ -110,7 +110,14 @@ addressBook.push(
     "aditi@gmail.com"
   )
 );
+console.log("After adding new contact:");
 console.log(addressBook);
-addressBook.find((contact) => contact.firstName == "Akram").firstName =
+
+addressBook.find((contact) => contact.firstName === "Akram").firstName =
   "Aakash";
+console.log("After editing name:");
+console.log(addressBook);
+
+addressBook = addressBook.filter((contact) => contact.firstName !== "Aakash");
+console.log("After deleting:");
 console.log(addressBook);
