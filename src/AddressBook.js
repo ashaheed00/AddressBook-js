@@ -111,3 +111,6 @@ addressBook.push(
   )
 );
 console.log(addressBook);
+addressBook.find((contact) => contact.firstName == "Akram").firstName =
+  "Aakash";
+console.log(addressBook);
