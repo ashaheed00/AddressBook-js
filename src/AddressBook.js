@@ -152,6 +152,37 @@ try {
   console.error(e);
 }
 
+newContact = new Contact(
+  "Abir",
+  "Sharma",
+  "Kolapur",
+  "Mumbai",
+  "Maharashtra",
+  "401401",
+  "9595959595",
+  "adi@gmail.com"
+);
+try {
+  addNewContact(addressBook, newContact);
+} catch (e) {
+  console.error(e);
+}
+newContact = new Contact(
+  "Abir",
+  "Roy",
+  "Kolapur",
+  "Mumbai",
+  "Maharashtra",
+  "401401",
+  "9595959595",
+  "adi@gmail.com"
+);
+try {
+  addNewContact(addressBook, newContact);
+} catch (e) {
+  console.error(e);
+}
+
 function searchByCity(addressBook, city) {
   return addressBook.filter((contact) => contact.city === city);
 }
@@ -194,3 +225,8 @@ viewByState(addressBook).forEach((value, key) =>
   countByState.set(key, value.length)
 );
 console.log(countByState);
+
+addressBook.sort((a, b) =>
+  (a.firstName + " " + a.lastName).localeCompare(b.firstName + " " + b.lastName)
+);
+console.log(addressBook);
