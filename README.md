@@ -1,3 +1,3 @@
 # AddressBook-js
 
-### UC1_CreateAddressBook
+### UC2_ValidateProperties
