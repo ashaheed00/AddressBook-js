@@ -226,7 +226,34 @@ viewByState(addressBook).forEach((value, key) =>
 );
 console.log(countByState);
 
-addressBook.sort((a, b) =>
-  (a.firstName + " " + a.lastName).localeCompare(b.firstName + " " + b.lastName)
-);
-console.log(addressBook);
+function sortAddressBook(addressBook, field) {
+  switch (field.toLowerCase()) {
+    case "name":
+      return addressBook.sort((a, b) =>
+        (a.firstName + " " + a.lastName).localeCompare(
+          b.firstName + " " + b.lastName
+        )
+      );
+      break;
+    case "city":
+      return addressBook.sort((a, b) => a.city.localeCompare(b.city));
+      break;
+    case "state":
+      return addressBook.sort((a, b) => a.state.localeCompare(b.state));
+      break;
+    case "zip":
+      return addressBook.sort((a, b) => a.zip.localeCompare(b.zip));
+      break;
+    default:
+      return null;
+  }
+}
+
+console.log("\nSorted By Name: ");
+console.log(sortAddressBook(addressBook, "name"));
+console.log("\nSorted By City: ");
+console.log(sortAddressBook(addressBook, "city"));
+console.log("\nSorted By State: ");
+console.log(sortAddressBook(addressBook, "state"));
+console.log("\nSorted By Zip: ");
+console.log(sortAddressBook(addressBook, "zip"));
