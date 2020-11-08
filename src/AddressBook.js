@@ -162,3 +162,24 @@ function searchByState(addressBook, state) {
 
 console.log(searchByCity(addressBook, "Pune"));
 console.log(searchByState(addressBook, "West Bengal"));
+
+function viewByCity(addressBook) {
+  let contactsByCity = new Map();
+  addressBook.filter((contact) =>
+    contactsByCity.set(contact.city, searchByCity(addressBook, contact.city))
+  );
+  return contactsByCity;
+}
+function viewByState(addressBook) {
+  let contactsByState = new Map();
+  addressBook.filter((contact) =>
+    contactsByState.set(
+      contact.state,
+      searchByState(addressBook, contact.state)
+    )
+  );
+  return contactsByState;
+}
+
+console.log(viewByCity(addressBook));
+console.log(viewByState(addressBook));
