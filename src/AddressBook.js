@@ -118,6 +118,8 @@ addressBook.find((contact) => contact.firstName === "Akram").firstName =
 console.log("After editing name:");
 console.log(addressBook);
 
-addressBook = addressBook.filter((contact) => contact.firstName !== "Aakash");
-console.log("After deleting:");
-console.log(addressBook);
+function counter(count) {
+  return ++count;
+}
+numbersOfContact = addressBook.reduce(counter, 0);
+console.log("Number of contacts: " + numbersOfContact);
