@@ -32,7 +32,7 @@ class Contact {
     return this._address;
   }
   set address(address) {
-    const nameRegex = RegExp("^[A-Za-z0-9/,]{4,}$");
+    const nameRegex = RegExp("^[\\w/,\\s]{4,}$");
     if (nameRegex.test(address)) this._address = address;
     else throw "Given address is in wrong format";
   }
@@ -98,4 +98,16 @@ let addressBook = [
   ),
 ];
 
+addressBook.push(
+  new Contact(
+    "Aditi",
+    "Sharma",
+    "56/A Mannat Complex",
+    "Pune",
+    "Maharashtra",
+    "412000",
+    "8282828282",
+    "aditi@gmail.com"
+  )
+);
 console.log(addressBook);

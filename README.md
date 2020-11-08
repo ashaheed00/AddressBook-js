@@ -1,3 +1,3 @@
 # AddressBook-js
 
-### UC2_ValidateProperties
+### UC3_AddContactsToAddressBook
